@@ -1,0 +1,24 @@
+{
+  "name": "hearthstone-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashanevs/hearthstone-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashanevs/hearthstone-api/issues"
+  },
+  "homepage": "https://github.com/ashanevs/hearthstone-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "unirest": "^0.6.0"
+  }
+}
