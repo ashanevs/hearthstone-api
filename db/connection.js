@@ -7,7 +7,7 @@ let mongoURI = "";
 if (process.env.NODE_ENV === "production") {
   mongoURI = process.env.DB_URL;
 } else {
-  mongoURI = "mongodb://localhost/8080";
+  mongoURI = "mongodb://localhost/hearthstone_db";
 }
 
 mongoose

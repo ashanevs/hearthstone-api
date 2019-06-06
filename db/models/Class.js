@@ -5,7 +5,7 @@ const ClassSchema = mongoose.Schema({
   cards: [
     {
       ref: "Card",
-      type: mongood.Schema.Types.ObjectId
+      type: mongoose.Schema.Types.ObjectId
     }
   ]
 });

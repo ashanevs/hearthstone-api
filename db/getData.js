@@ -11,9 +11,7 @@ unirest
   .end(function(result) {
     let resultAsArray = Object.values(result.body);
     resultAsArray = resultAsArray.map(topArray => {
-      return (filteredArray = topArray.filter(cards =>
-        cards.hasOwnProperty("collectible")
-      ));
+      return topArray.filter(cards => cards.hasOwnProperty("collectible"));
     });
     let stringified = JSON.stringify(resultAsArray, null, 2);
     fs.writeFile("./db/data.json", stringified, "utf8", err => {
