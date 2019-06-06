@@ -16,24 +16,49 @@ const classData = require("./classData.json");
 //   Class.create(classData).then(res => console.log(res))
 // );
 
-Card.deleteMany({}).then(() => {
-  theSet.deleteMany({}).then(() => {
-    Class.deleteMany({}).then(() => {
-      Card.create(cardsData).then(cardDocs => {
-        theSet.create(setsData).then(setDocs => {
-          Class.create(classData).then(classDocs => {
-            for (let i = 0; i < cardDocs.length; i++) {
-              const cardFromCollection = cardDocs[i];
-              const cardFromJson = cardsData.find(card => {
-                return card.name === cardFromCollection.name;
-              });
-              console.log(cardFromCollection);
-              console.log(cardFromJson);
-              // const cardSetFromCollection = card.cardSet;
-            }
-          });
-        });
-      });
+const validCardData = cardsData.map(card => {
+  const cardCopy = JSON.parse(JSON.stringify(card));
+  delete cardCopy.cardSet;
+  delete cardCopy.playerClass;
+  return cardCopy;
+});
+
+Card.deleteMany({}).then(_ => {
+  Card.create(validCardData).then(cardDocs => {
+    // cardDocs.forEach((cardFromCollection, cardIndex) => {
+    //   const cardFromJson = cardsData.find(card => {
+    //     return card.name === cardFromCollection.name;
+    //   });
+    //   console.log(cardFromCollection);
+    //   console.log(cardFromJson);
+    // });
+    const cardFromCollection = cardDocs[0];
+    const cardFromJson = cardsData.find(card => {
+      return card.name === cardFromCollection.name;
     });
+    console.log(cardFromCollection);
+    console.log(cardFromJson);
   });
 });
+
+// Card.deleteMany({}).then(() => {
+//   theSet.deleteMany({}).then(() => {
+//     Class.deleteMany({}).then(() => {
+//       Card.create(cardsData).then(cardDocs => {
+//         theSet.create(setsData).then(setDocs => {
+//           Class.create(classData).then(classDocs => {
+//             for (let i = 0; i < cardDocs.length; i++) {
+//               const cardFromCollection = cardDocs[i];
+//               const cardFromJson = cardsData.find(card => {
+//                 return card.name === cardFromCollection.name;
+//               });
+//               console.log(cardFromCollection);
+//               console.log(cardFromJson);
+//               // const cardSetFromCollection = card.cardSet;
+//             }
+//           });
+//         });
+//       });
+//     });
+//   });
+// });
