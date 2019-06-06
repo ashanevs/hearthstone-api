@@ -1,17 +1,39 @@
-const cards = require("./models/Card");
+const Card = require("./models/Card");
 const cardsData = require("./cardData.json");
-const sets = require("./models/Set");
-const classes = require("./models/Class");
+const theSet = require("./models/Set");
+const setsData = require("./setData.json");
+const Class = require("./models/Class");
 const classData = require("./classData.json");
 
-cards
-  .find({})
-  .remove(() => cards.create(cardsData).then(res => console.log(res)));
+// Card.find({}).remove(() =>
+//   Card.create(cardsData).then(res => console.log(res))
+// );
 
-sets
-  .find({})
-  .remove(() => sets.create(cardsData).then(res => console.log(res)));
+// theSet.find({})
+//   .remove(() => theSet.create(setsData).then(res => console.log(res)));
 
-classes
-  .find({})
-  .remove(() => classes.create(classData).then(res => console.log(res)));
+// Class.find({}).remove(() =>
+//   Class.create(classData).then(res => console.log(res))
+// );
+
+Card.deleteMany({}).then(() => {
+  theSet.deleteMany({}).then(() => {
+    Class.deleteMany({}).then(() => {
+      Card.create(cardsData).then(cardDocs => {
+        theSet.create(setsData).then(setDocs => {
+          Class.create(classData).then(classDocs => {
+            for (let i = 0; i < cardDocs.length; i++) {
+              const cardFromCollection = cardDocs[i];
+              const cardFromJson = cardsData.find(card => {
+                return card.name === cardFromCollection.name;
+              });
+              console.log(cardFromCollection);
+              console.log(cardFromJson);
+              // const cardSetFromCollection = card.cardSet;
+            }
+          });
+        });
+      });
+    });
+  });
+});

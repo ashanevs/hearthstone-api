@@ -2,7 +2,6 @@ const mongoose = require("../connection");
 
 const SetSchema = mongoose.Schema({
   name: String,
-  numberCards: Number,
   cards: [
     {
       ref: "Card",

@@ -1,42 +1,42 @@
 [
   {
     "name": "Priest",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Warrior",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Warlock",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Mage",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Druid",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Hunter",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Shaman",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Paladin",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Rogue",
-    "cards": null
+    "cards": []
   },
   {
     "name": "Neutral",
-    "cards": null
+    "cards": []
   }
 ]

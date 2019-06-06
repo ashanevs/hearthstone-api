@@ -1,97 +1,74 @@
 [
   {
     "name": "Basic",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Classic",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Hall of Fame",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Naxxramas",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Goblins vs Gnomes",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Blackrock Mountain",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "The Grand Tournament",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "The League of Explorers",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Whispers of the Old Gods",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "One Night in Karazhan",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Mean Streets of Gadgetzan",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Journey to Un'Goro",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Knights of the Frozen Throne",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Kobolds & Catacombs",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "The Witchwood",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "The Boomsday Project",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Rastakhan's Rumble",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   },
   {
     "name": "Rise of Shadows",
-    "numberCards": null,
-    "cards": null
-  },
-  {
-    "name": "Hero Skins",
-    "numberCards": null,
-    "cards": null
+    "cards": []
   }
 ]

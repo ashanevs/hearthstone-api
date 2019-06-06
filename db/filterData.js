@@ -23,16 +23,24 @@ var cardModel = newArray.map(card => {
   return newCard;
 });
 
+let repeatCard = { "Hero Skins": true };
+cardModel = cardModel.filter(eachCard => {
+  if (eachCard.cardSet in repeatCard) {
+    return false;
+  } else {
+    return true;
+  }
+});
+
 var setModel = newArray.map(set => {
   let newSet = {
     name: set.cardSet,
-    numberCards: null,
-    cards: null
+    cards: []
   };
   return newSet;
 });
 
-let repeatSet = {};
+let repeatSet = { "Hero Skins": true };
 setModel = setModel.filter(eachSet => {
   if (eachSet.name in repeatSet) {
     return false;
@@ -45,7 +53,7 @@ setModel = setModel.filter(eachSet => {
 var classModel = newArray.map(theClass => {
   let newClass = {
     name: theClass.playerClass,
-    cards: null
+    cards: []
   };
   return newClass;
 });

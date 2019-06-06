@@ -2,7 +2,6 @@ const mongoose = require("../connection");
 
 const CardSchema = mongoose.Schema({
   name: String,
-  // cardSet: String,
   cardSet: {
     ref: "Set",
     type: mongoose.Schema.Types.ObjectId
