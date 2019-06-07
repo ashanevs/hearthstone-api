@@ -55,17 +55,22 @@ Card.deleteMany({}).then(_ => {
               const cardFromJson = cardsData.find(card => {
                 return card.name === cardFromCollection.name;
               });
-              Class.findOne({ name: cardFromJson.playerClass }).then(oneDoc => {
-                oneDoc.cards.push(cardFromCollection._id);
-                cardFromCollection.playerClass = oneDoc._id;
-                oneDoc.save();
-              });
-              theSet.findOne({ name: cardFromJson.cardSet }).then(oneSet => {
-                oneSet.cards.push(cardFromCollection._id);
-                cardFromCollection.cardSet = oneSet._id;
-                cardFromCollection.save();
-                oneSet.save();
-              });
+              Class.findOne({ name: cardFromJson.playerClass })
+                .then(oneClass => {
+                  oneClass.cards.push(cardFromCollection._id);
+                  cardFromCollection.playerClass = oneClass._id;
+                  oneClass.save();
+                })
+                .then(
+                  theSet
+                    .findOne({ name: cardFromJson.cardSet })
+                    .then(oneSet => {
+                      oneSet.cards.push(cardFromCollection._id);
+                      cardFromCollection.cardSet = oneSet._id;
+                      oneSet.save();
+                      cardFromCollection.save();
+                    })
+                );
             }
           });
         });
