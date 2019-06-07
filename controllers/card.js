@@ -4,7 +4,7 @@ module.exports = {
   index: (req, res) => {
     Card.find({})
       .populate("cardSet")
-      .exec(function(cards) {
+      .exec(function(err, cards) {
         res.json(cards);
       });
   },
