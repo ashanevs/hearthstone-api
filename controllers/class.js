@@ -6,6 +6,9 @@ module.exports = {
       res.json(classes);
     });
   },
+  getById: (req, res) => {
+    Class.find({ _id: req.params.id }).then(thisClass => res.json(thisClass));
+  },
   create: (req, res) => {
     Class.create(req.body).then(classes => {
       res.json(classes);

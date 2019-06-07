@@ -6,6 +6,9 @@ module.exports = {
       res.json(sets);
     });
   },
+  getById: (req, res) => {
+    Set.find({ _id: req.params.id }).then(set => res.json(set));
+  },
   create: (req, res) => {
     Set.create(req.body).then(set => {
       res.json(set);

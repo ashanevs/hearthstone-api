@@ -3,6 +3,7 @@ const router = express.Router();
 const classController = require("../controllers/class");
 
 router.get("/", classController.index);
+router.get("/id/:id", classController.getById);
 router.post("/", classController.create);
 router.put("/:name", classController.edit);
 router.delete("/:name", classController.delete);

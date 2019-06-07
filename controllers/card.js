@@ -6,6 +6,9 @@ module.exports = {
       res.json(cards);
     });
   },
+  getById: (req, res) => {
+    Card.find({ _id: req.params.id }).then(card => res.json(card));
+  },
   create: (req, res) => {
     Card.create(req.body).then(card => {
       res.json(card);
