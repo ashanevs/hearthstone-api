@@ -9,6 +9,9 @@ module.exports = {
   getById: (req, res) => {
     Card.find({ _id: req.params.id }).then(card => res.json(card));
   },
+  getByName: (req, res) => {
+    Card.find({ name: req.params.name }).then(card => res.json(card));
+  },
   create: (req, res) => {
     Card.create(req.body).then(card => {
       res.json(card);
