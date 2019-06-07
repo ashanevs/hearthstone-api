@@ -12,6 +12,10 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.redirect("/api/card");
+});
+
 app.use("/api/cards/", cardRoute);
 app.use("/api/sets", setRoute);
 app.use("/api/classes", classRoute);
