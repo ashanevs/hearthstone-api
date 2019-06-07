@@ -13,7 +13,7 @@ app.use(parser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.redirect("/api/card");
+  res.redirect("/api/cards");
 });
 
 app.use("/api/cards/", cardRoute);
