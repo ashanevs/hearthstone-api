@@ -2,7 +2,7 @@ const Card = require("../db/models/Card");
 
 module.exports = {
   index: (req, res) => {
-    models.Card.find({})
+    Card.find({})
       .populate("playerClass")
       .populate("cardSet")
       .lean()
