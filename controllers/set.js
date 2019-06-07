@@ -9,14 +9,14 @@ module.exports = {
       });
   },
   getById: (req, res) => {
-    Set.find({ _id: req.params.id })
+    Set.findOne({ _id: req.params.id })
       .populate("cards", "name")
       .exec(function(err, set) {
         res.json(set);
       });
   },
   getByName: (req, res) => {
-    Set.find({ name: req.params.name })
+    Set.findOne({ name: req.params.name })
       .populate("cards", "name")
       .exec(function(err, set) {
         res.json(set);

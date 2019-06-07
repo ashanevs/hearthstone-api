@@ -9,14 +9,14 @@ module.exports = {
       });
   },
   getById: (req, res) => {
-    Class.find({ _id: req.params.id })
+    Class.findOne({ _id: req.params.id })
       .populate("cards", "name")
       .exec(function(err, thisClass) {
         res.json(thisClass);
       });
   },
   getByName: (req, res) => {
-    Class.find({ name: req.params.name })
+    Class.findOne({ name: req.params.name })
       .populate("cards", "name")
       .exec(function(err, thisClass) {
         res.json(thisClass);

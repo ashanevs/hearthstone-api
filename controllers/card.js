@@ -10,7 +10,7 @@ module.exports = {
       });
   },
   getById: (req, res) => {
-    Card.find({ _id: req.params.id })
+    Card.findOne({ _id: req.params.id })
       .populate("cardSet", "name")
       .populate("playerClass", "name")
       .exec(function(err, card) {
@@ -18,7 +18,7 @@ module.exports = {
       });
   },
   getByName: (req, res) => {
-    Card.find({ name: req.params.name })
+    Card.findOne({ name: req.params.name })
       .populate("cardSet", "name")
       .populate("playerClass", "name")
       .exec(function(err, card) {
