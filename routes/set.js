@@ -4,6 +4,7 @@ const setController = require("../controllers/set");
 
 router.get("/", setController.index);
 router.get("/id/:id", setController.getById);
+router.get("/name/:name", setController.getByName);
 router.post("/", setController.create);
 router.put("/:name", setController.edit);
 router.delete("/:name", setController.delete);
