@@ -4,8 +4,6 @@ module.exports = {
   index: (req, res) => {
     Card.find({})
       .populate("playerClass")
-      .populate("cardSet")
-      .lean()
       .exec(function(cards) {
         res.json(cards);
       });
