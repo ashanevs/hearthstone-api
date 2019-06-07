@@ -3,7 +3,7 @@ const Card = require("../db/models/Card");
 module.exports = {
   index: (req, res) => {
     Card.find({})
-      .populate("playerClass")
+      .populate("cardSet")
       .exec(function(cards) {
         res.json(cards);
       });
