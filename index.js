@@ -1,6 +1,7 @@
 const express = require("express");
 const parser = require("body-parser");
 const cors = require("cors");
+const exphbs = require("express-handlebars");
 
 const cardRoute = require("./routes/card");
 const setRoute = require("./routes/set");
@@ -12,9 +13,15 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 app.use(cors());
 
+app.engine("handlebars", exphbs());
+app.set("view engine", "handlebars");
+
 app.get("/", (req, res) => {
-  res.redirect("/api/cards");
+  res.render("home", { title: "Hearthstone Card Api" });
 });
+// app.get("/", (req, res) => {
+//   res.redirect("/api/cards");
+// });
 
 app.use("/api/cards/", cardRoute);
 app.use("/api/sets", setRoute);

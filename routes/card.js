@@ -9,4 +9,6 @@ router.post("/", cardController.create);
 router.put("/:name", cardController.edit);
 router.delete("/:name", cardController.delete);
 
+router.get("/test/:name", cardController.test);
+
 module.exports = router;

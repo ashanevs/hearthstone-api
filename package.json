@@ -21,6 +21,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
     "mongodb": "^3.2.7",
     "mongoose": "^5.5.12",
     "unirest": "^0.6.0"

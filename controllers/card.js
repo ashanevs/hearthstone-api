@@ -9,6 +9,11 @@ module.exports = {
         res.json(cards);
       });
   },
+  test: (req, res) => {
+    Card.findOne({ name: req.params.name }).then(card => {
+      res.render("home", { whatever: card.imgGold });
+    });
+  },
   getById: (req, res) => {
     Card.findOne({ _id: req.params.id })
       .populate("cardSet", "name")
