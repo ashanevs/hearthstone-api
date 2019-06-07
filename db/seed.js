@@ -24,26 +24,6 @@ const validClassData = classData.map(theClass => {
   return classCopy;
 });
 
-// Card.deleteMany({}).then(_ => {
-//   Card.create(validCardData).then(cardDocs => {
-
-// cardDocs.forEach((cardFromCollection, cardIndex) => {
-//   const cardFromJson = cardsData.find(card => {
-//     return card.name === cardFromCollection.name;
-//   });
-//   console.log(cardFromCollection);
-//   console.log(cardFromJson);
-// });
-
-//     const cardFromCollection = cardDocs[0];
-//     const cardFromJson = cardsData.find(card => {
-//       return card.name === cardFromCollection.name;
-//     });
-//     console.log(cardFromCollection);
-//     console.log(cardFromJson);
-//   });
-// });
-
 Card.deleteMany({}).then(_ => {
   Card.create(validCardData).then(cardDocs => {
     Class.deleteMany({}).then(_ => {
@@ -70,20 +50,6 @@ Card.deleteMany({}).then(_ => {
                     });
                 }
               );
-              // Class.findOne({ name: cardFromJson.playerClass }).then(
-              //   oneClass => {
-              //     oneClass.cards.push(cardFromCollection._id);
-              //     cardFromCollection.playerClass = oneClass._id;
-              //     oneClass.save();
-              //     cardFromCollection.save();
-              //   }
-              // );
-              // theSet.findOne({ name: cardFromJson.cardSet }).then(oneSet => {
-              //   oneSet.cards.push(cardFromCollection._id);
-              //   cardFromCollection.cardSet = oneSet._id;
-              //   oneSet.save();
-              //   cardFromCollection.save();
-              // });
             }
           });
         });
@@ -91,25 +57,3 @@ Card.deleteMany({}).then(_ => {
     });
   });
 });
-
-// Card.deleteMany({}).then(() => {
-//   theSet.deleteMany({}).then(() => {
-//     Class.deleteMany({}).then(() => {
-//       Card.create(cardsData).then(cardDocs => {
-//         theSet.create(setsData).then(setDocs => {
-//           Class.create(classData).then(classDocs => {
-//             for (let i = 0; i < cardDocs.length; i++) {
-//               const cardFromCollection = cardDocs[i];
-//               const cardFromJson = cardsData.find(card => {
-//                 return card.name === cardFromCollection.name;
-//               });
-//               console.log(cardFromCollection);
-//               console.log(cardFromJson);
-//               // const cardSetFromCollection = card.cardSet;
-//             }
-//           });
-//         });
-//       });
-//     });
-//   });
-// });

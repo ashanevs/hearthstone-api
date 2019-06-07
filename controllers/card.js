@@ -2,9 +2,13 @@ const Card = require("../db/models/Card");
 
 module.exports = {
   index: (req, res) => {
-    Card.find({}).then(cards => {
-      res.json(cards);
-    });
+    models.Card.find({})
+      .populate("playerClass")
+      .populate("cardSet")
+      .lean()
+      .exec(function(cards) {
+        res.json(cards);
+      });
   },
   getById: (req, res) => {
     Card.find({ _id: req.params.id }).then(card => res.json(card));
