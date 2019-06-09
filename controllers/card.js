@@ -1,6 +1,14 @@
 const Card = require("../db/models/Card");
 
 module.exports = {
+  cardSearch: (req, res) => {
+    Card.findOne({ name: req.body.name })
+      .populate("cardSet", "name")
+      .populate("playerClass", "name")
+      .exec(function(err, card) {
+        res.render("card", { card });
+      });
+  },
   index: (req, res) => {
     Card.find({})
       .populate("cardSet", "name")

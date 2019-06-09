@@ -9,5 +9,6 @@ router.get("/name/:name", cardController.getByName);
 router.post("/", cardController.create);
 router.put("/:name", cardController.edit);
 router.delete("/:name", cardController.delete);
+router.post("/cardsearch", cardController.cardSearch);
 
 module.exports = router;

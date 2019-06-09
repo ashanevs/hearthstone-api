@@ -2,6 +2,11 @@
   <header>
     <h1 class="top-content">Welcome to <img id="hearthstone-logo" src="images/hearthstonelogo.png"> Card API</h1>
   </header>
+  <p>Search for card by name (case sensitive):</p>
+  <form method="POST" action="/api/cards/cardsearch/">
+    <input class="input-field" name="name">
+    <button class="search-button">Search</button type="button">
+  </form>
   <p>View cards by class:</p>
   <div class="heroes">
     {{#each thisClass}}
@@ -14,5 +19,5 @@
     <a href="/api/sets" class="text-links">Sets</a>
     <a href="/api/classes" class="text-links">Classes</a>
   </div>
-  <p>Created by Shane Vann-Shirley, 2019</p>
+  <p class="name-paragraph">Created by Shane Vann-Shirley, 2019</p>
 </div>
