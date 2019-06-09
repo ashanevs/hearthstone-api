@@ -1,8 +1,11 @@
 <div class="container">
-  <h1>Welcome to <img id="hearthstone-logo" src="images/hearthstonelogo.png"> API</h1>
+  <header>
+    <h1 class="top-content">Welcome to <img id="hearthstone-logo" src="images/hearthstonelogo.png"> Card API</h1>
+  </header>
+  <p>View cards by class:</p>
   <div class="heroes">
     {{#each thisClass}}
-    <li><a href="/api/classes/test/{{{this.name}}}">{{this.name}}</a></li>
+    <a href="/api/classes/showclass/{{{this.name}}}">{{this.name}}</a>
     {{/each}}
   </div>
   <div class="nav">
@@ -10,4 +13,5 @@
     <a href="/api/sets">View Sets JSON</a>
     <a href="/api/classes">View Classes JSON</a>
   </div>
+  <p>Created by Shane Vann-Shirley, 2019</p>
 </div>

@@ -9,12 +9,7 @@ module.exports = {
         res.json(cards);
       });
   },
-  // test: (req, res) => {
-  //   Card.findOne({ name: req.params.name }).then(card => {
-  //     res.render("home", { card });
-  //   });
-  // },
-  test: (req, res) => {
+  showCard: (req, res) => {
     Card.findOne({ name: req.params.name })
       .populate("cardSet", "name")
       .populate("playerClass", "name")
