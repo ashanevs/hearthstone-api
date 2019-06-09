@@ -1,6 +1,11 @@
 const Set = require("../db/models/Set");
 
 module.exports = {
+  showSets: (req, res) => {
+    Set.find({ name: req.params.name }).then(set => {
+      res.render("set", { set });
+    });
+  },
   index: (req, res) => {
     Set.find({})
       .populate("cards", "name")

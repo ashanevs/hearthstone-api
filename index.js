@@ -3,6 +3,8 @@ const parser = require("body-parser");
 const cors = require("cors");
 const exphbs = require("express-handlebars");
 
+const Class = require("./db/models/Class");
+
 const cardRoute = require("./routes/card");
 const setRoute = require("./routes/set");
 const classRoute = require("./routes/class");
@@ -12,13 +14,21 @@ const app = express();
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 app.use(cors());
+app.use(express.static("./views/public"));
 
-app.engine("handlebars", exphbs());
+const hbs = exphbs.create({});
+
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-  res.render("home", { title: "Hearthstone Card Api" });
+  Class.find({})
+    .populate("class", "name")
+    .exec(function(err, thisClass) {
+      res.render("home", { thisClass });
+    });
 });
+
 // app.get("/", (req, res) => {
 //   res.redirect("/api/cards");
 // });

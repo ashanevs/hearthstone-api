@@ -1,6 +1,13 @@
 const Class = require("../db/models/Class");
 
 module.exports = {
+  showClasses: (req, res) => {
+    Class.findOne({ name: req.params.name })
+      .populate("cards")
+      .exec(function(err, thisClass) {
+        res.render("class", { thisClass });
+      });
+  },
   index: (req, res) => {
     Class.find({})
       .populate("cards", "name")

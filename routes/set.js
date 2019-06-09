@@ -9,4 +9,6 @@ router.post("/", setController.create);
 router.put("/:name", setController.edit);
 router.delete("/:name", setController.delete);
 
+router.get("/test/:name", setController.showSets);
+
 module.exports = router;

@@ -1,0 +1,7 @@
+<h1>{{{thisClass.name}}}</h1>
+<ul>
+  {{#each thisClass.cards}}
+  {{!-- <li><a href="/api/cards/test/{{{this.name}}}">{{this.name}}</a></li> --}}
+  <a href="/api/cards/test/{{{this.name}}}"><img src="{{{this.imgGold}}}" /></a>
+  {{/each}}
+</ul>

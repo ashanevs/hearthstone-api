@@ -9,4 +9,6 @@ router.post("/", classController.create);
 router.put("/:name", classController.edit);
 router.delete("/:name", classController.delete);
 
+router.get("/test/:name", classController.showClasses);
+
 module.exports = router;

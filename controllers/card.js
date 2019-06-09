@@ -9,10 +9,18 @@ module.exports = {
         res.json(cards);
       });
   },
+  // test: (req, res) => {
+  //   Card.findOne({ name: req.params.name }).then(card => {
+  //     res.render("home", { card });
+  //   });
+  // },
   test: (req, res) => {
-    Card.findOne({ name: req.params.name }).then(card => {
-      res.render("home", { whatever: card.imgGold });
-    });
+    Card.findOne({ name: req.params.name })
+      .populate("cardSet", "name")
+      .populate("playerClass", "name")
+      .exec(function(err, card) {
+        res.render("card", { card });
+      });
   },
   getById: (req, res) => {
     Card.findOne({ _id: req.params.id })

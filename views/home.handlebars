@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>{{title}}</title>
-</head>
-
-<body>
-  {{{body}}}
-  <div><img src="{{{whatever}}}"></div>
-</body>
-
-</html>
+<div class="container">
+  <h1>Welcome to <img id="hearthstone-logo" src="images/hearthstonelogo.png"> API</h1>
+  <div class="heroes">
+    {{#each thisClass}}
+    <li><a href="/api/classes/test/{{{this.name}}}">{{this.name}}</a></li>
+    {{/each}}
+  </div>
+  <div class="nav">
+    <a href="/api/cards">View Cards JSON</a>
+    <a href="/api/sets">View Sets JSON</a>
+    <a href="/api/classes">View Classes JSON</a>
+  </div>
+</div>
