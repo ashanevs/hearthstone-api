@@ -1,7 +1,6 @@
-<h1>{{{thisClass.name}}}</h1>
-<ul>
-  {{#each thisClass.cards}}
-  {{!-- <li><a href="/api/cards/test/{{{this.name}}}">{{this.name}}</a></li> --}}
-  <a href="/api/cards/showcard/{{{this.name}}}"><img src="{{{this.imgGold}}}" /></a>
-  {{/each}}
-</ul>
+<a class="text-links-external" href="/">Home</a>
+<a class="text-links-external" href="javascript:history.back()">Back</a>
+<h1 class="page-title">{{{thisClass.name}}} Card List</h1>
+{{#each thisClass.cards}} <a href="/api/cards/showcard/{{{this.name}}}"><img src="{{{this.img}}}" /></a>
+{{/each}}
+<p>Created by Shane Vann-Shirley, 2019</p>

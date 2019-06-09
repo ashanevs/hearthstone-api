@@ -5,13 +5,14 @@
   <p>View cards by class:</p>
   <div class="heroes">
     {{#each thisClass}}
-    <a href="/api/classes/showclass/{{{this.name}}}">{{this.name}}</a>
+    <a href="/api/classes/showclass/{{{this.name}}}" class="text-links">{{this.name}}</a>
     {{/each}}
   </div>
+  <p>View JSON:</p>
   <div class="nav">
-    <a href="/api/cards">View Cards JSON</a>
-    <a href="/api/sets">View Sets JSON</a>
-    <a href="/api/classes">View Classes JSON</a>
+    <a href="/api/cards" class="text-links">Cards</a>
+    <a href="/api/sets" class="text-links">Sets</a>
+    <a href="/api/classes" class="text-links">Classes</a>
   </div>
   <p>Created by Shane Vann-Shirley, 2019</p>
 </div>

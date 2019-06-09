@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -33,6 +33,7 @@ body {
 }
 h1 {
   font-size: 42px;
+  margin-top: 10px;
 }
 a,
 a.visited {
@@ -43,7 +44,6 @@ a.visited {
   margin: 20px 30px;
   box-shadow: 5px 3px 3px gold;
   background: goldenrod;
-  color: black;
   font-size: 30px;
 }
 .nav {
@@ -60,4 +60,73 @@ a.visited {
 p {
   margin: 10px 0px;
   font-size: 32px;
+}
+.hero-list {
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+}
+.top-content {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#hearthstone-logo {
+  height: 100px;
+  margin: 0px 10px;
+}
+body {
+  background: #323232;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto;
+}
+a,
+a.visited {
+  color: white;
+}
+.text-links {
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 30px;
+  box-shadow: 5px 3px 3px gold;
+  background: goldenrod;
+  font-size: 30px;
+}
+.heroes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+.page-title {
+  margin: 20px 0 -40px 0;
+}
+.text-links-external {
+  font-size: 26px;
+  margin: 0px 20px;
+}
+ul {
+  margin: 60px 0 -40px 0;
 }
