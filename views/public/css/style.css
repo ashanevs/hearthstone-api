@@ -125,8 +125,10 @@ a.visited {
 }
 .text-links-external {
   font-size: 26px;
-  margin: 0px 20px;
+  margin: 20px 20px;
 }
 ul {
   margin: 60px 0 -40px 0;
+}
+@media screen and (max-width: 800px) {
 }

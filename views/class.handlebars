@@ -1,5 +1,7 @@
-<a class="text-links-external" href="/">Home</a>
-<a class="text-links-external" href="javascript:history.back()">Back</a>
+<div class="text-links-external">
+  <a href="/">Home</a>
+  <a href="javascript:history.back()">Back</a>
+</div>
 <h1 class="page-title">{{{thisClass.name}}} Card List</h1>
 {{#each thisClass.cards}} <a href="/api/cards/showcard/{{{this.name}}}"><img src="{{{this.img}}}" /></a>
 {{/each}}
