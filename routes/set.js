@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const setController = require("../controllers/set");
 
-router.get("/showset/:name", setController.showSets);
+router.get("/showset/:name", setController.showSet);
 router.get("/", setController.index);
 router.get("/id/:id", setController.getById);
 router.get("/name/:name", setController.getByName);

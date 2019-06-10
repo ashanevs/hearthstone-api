@@ -1,28 +1,12 @@
 const Card = require("../db/models/Card");
 
 module.exports = {
-  cardSearch: (req, res) => {
-    Card.findOne({ name: req.body.name })
-      .populate("cardSet", "name")
-      .populate("playerClass", "name")
-      .exec(function(err, card) {
-        res.render("card", { card });
-      });
-  },
   index: (req, res) => {
     Card.find({})
       .populate("cardSet", "name")
       .populate("playerClass", "name")
       .exec(function(err, cards) {
         res.json(cards);
-      });
-  },
-  showCard: (req, res) => {
-    Card.findOne({ name: req.params.name })
-      .populate("cardSet", "name")
-      .populate("playerClass", "name")
-      .exec(function(err, card) {
-        res.render("card", { card });
       });
   },
   getById: (req, res) => {
@@ -39,6 +23,22 @@ module.exports = {
       .populate("playerClass", "name")
       .exec(function(err, card) {
         res.json(card);
+      });
+  },
+  showCard: (req, res) => {
+    Card.findOne({ name: req.params.name })
+      .populate("cardSet", "name")
+      .populate("playerClass", "name")
+      .exec(function(err, card) {
+        res.render("card", { card });
+      });
+  },
+  cardSearch: (req, res) => {
+    Card.findOne({ name: req.body.name })
+      .populate("cardSet", "name")
+      .populate("playerClass", "name")
+      .exec(function(err, card) {
+        res.render("card", { card });
       });
   },
   create: (req, res) => {

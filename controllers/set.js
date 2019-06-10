@@ -1,13 +1,6 @@
 const Set = require("../db/models/Set");
 
 module.exports = {
-  showSets: (req, res) => {
-    Set.findOne({ name: req.params.name })
-      .populate("cards")
-      .exec(function(err, thisSet) {
-        res.render("set", { thisSet });
-      });
-  },
   index: (req, res) => {
     Set.find({})
       .populate("cards", "name")
@@ -27,6 +20,13 @@ module.exports = {
       .populate("cards", "name")
       .exec(function(err, set) {
         res.json(set);
+      });
+  },
+  showSet: (req, res) => {
+    Set.findOne({ name: req.params.name })
+      .populate("cards")
+      .exec(function(err, thisSet) {
+        res.render("set", { thisSet });
       });
   },
   create: (req, res) => {
