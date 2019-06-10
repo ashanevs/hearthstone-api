@@ -1,0 +1,50 @@
+Project - Building a Hearthstone-themed JSON API
+
+My goal is to create an API based on the PC/mobile game Hearthstone, created by Blizzard. I will be pulling my data from an existing API called Hearthstone API, which can be found here: 
+
+https://rapidapi.com/omgvamp/api/hearthstone
+
+My API will use three models: Card (each card in the game), Set (all cards included in each set, i.e. expansion of ~130 cards released every few months), and Class (all cards that are unique to the game's 9 playable classes and one non-playable "neutral" class).
+
+The models for Set and Class will be fairly simple, with the Card model containing the most interesting information. The Card model will have references to both the Set and Class they are from, while the Set and Class models will contain arrays that references every card contained within them respectively. The properties for each model will be as follows:
+
+Card = {
+ name: String,
+ cardSet: {
+   ref: "Set",
+   type: mongoose.Schema.Types.ObjectId
+ }
+ type: String,
+ rarity: String,
+ faction: String,
+ cost: Number,
+ text: String,
+ flavor: String,
+ playerClass: {
+    ref: "Class",
+    type: mongoose.Schema.Types.ObjectId
+  }
+ img: String,
+ imgGold: String
+}
+
+Class = {
+ name: String,
+ cards: [
+   {
+     ref: "Card",
+     type: mongood.Schema.Types.ObjectId
+   }
+ ]
+}
+
+Set = {
+ name: String,
+ numberCards: Number,
+ cards: [
+   {
+     ref: "Card",
+     type: mongood.Schema.Types.ObjectId
+   }
+ ]
+}
