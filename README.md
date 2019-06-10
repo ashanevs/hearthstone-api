@@ -76,15 +76,21 @@ Note that all ":name" endpoints are case sensitive - proper capitalization, punc
 |   Edit    |      /api/classes/:name      |    PUT    |   Edit an existing class using data from body    |
 |  Delete   |      /api/classes/:name      |  DELETE   |  Delete an existing class using data from body   |
 
-# Project History: Features, Issues, and Prospective Goals
+# Project History
 
 The MVP goal for this project was to create the back-end of the API. The major challenge of this involved filtering the initial data into a form that was easier to work with, then seeding the data into the database so that all three models had references to other models. These references were made stronger through the use of populate, which filled information to be more interesting at each JSON endpoint.
 
 Once the MVP was completed, my focus moved to create an interesting front end experience using Handlebars. The data I obtained included a number of links to card images, so it was easy to bring those into the views I created which embelished the project a great deal.
 
+## Issues
+
 Unfortunately, the original data was not entirely up to date, and the some recent sets' card-image urls are dead. While not readily apparently (they're pushed to the bottom of the front-end pages), this is something to be addressed in the future.
 
+The original data contains some characters that are encoded in a way that didn't translate properly through Handlebars. It seems likely that there is a helper function available within it that may solve this issue.
+
 There is also an issue wherein the image urls are sent via HTTP and not HTTPS, resulting in a Mixed Content warning in the console. This doesn't impact functionality, and can likely be overcome as simply as by mass-replacing http with https for each card entry in the original data before seeding. Due to time constraints this hasn't yet been addressed.
+
+## Prospective goals
 
 While there is a route to show all cards within a set (complete with front end), it has not yet been implemented. Ideally this would be visible on the home page similarly to the classes, or possibly made available when using an input box to search for a set by name.
 
