@@ -29,10 +29,6 @@ app.get("/", (req, res) => {
     });
 });
 
-// app.get("/", (req, res) => {
-//   res.redirect("/api/cards");
-// });
-
 app.use("/api/cards/", cardRoute);
 app.use("/api/sets", setRoute);
 app.use("/api/classes", classRoute);
