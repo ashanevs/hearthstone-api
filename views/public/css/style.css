@@ -97,7 +97,7 @@ input {
 li {
   margin: 10px 0px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .nav {
     display: flex;
     flex-direction: column;
@@ -107,5 +107,7 @@ li {
   }
   .heroes {
     flex-direction: column;
+    max-width: 30%;
+    align-content: center;
   }
 }
