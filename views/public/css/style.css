@@ -107,7 +107,6 @@ li {
   }
   .heroes {
     flex-direction: column;
-    max-width: 30%;
     align-content: center;
   }
 }
