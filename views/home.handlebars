@@ -1,9 +1,10 @@
 <div class="container">
   <header>
-    <h1 class="top-content">Welcome to <img id="hearthstone-logo" src="images/hearthstonelogo.png"> Card API</h1>
+    <h1 class="top-content">Welcome to <a href="/"><img id="hearthstone-logo" src="images/hearthstonelogo.png"></a> Card
+      API</h1>
   </header>
   <p>Search for card by name (case sensitive):</p>
-  <form method="POST" action="/api/cards/cardsearch/">
+  <form method="POST" action="/api/cards/cardsearch/" autocomplete="off" spellcheck="false">
     <input class="input-field" name="name">
     <button class="search-button">Search</button type="button">
   </form>
